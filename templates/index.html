@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Generator with Time Lock</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⏳ Timed QR Code Generator</h1>
+        <form method="POST">
+            <label>Enter your message:</label><br>
+            <textarea name="message" rows="4" required></textarea><br><br>
+            <label>Select unlock time:</label><br>
+            <input type="datetime-local" name="unlock_time" required><br><br>
+            <button type="submit">Generate QR Code</button>
+        </form>
+    </div>
+</body>
+</html>

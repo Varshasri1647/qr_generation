@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✅ QR Code Generated</h1>
+        <img src="{{ url_for('static', filename='qrcodes/' + image_file) }}" width="200"><br>
+        <a href="{{ url_for('download', filename=image_file) }}">⬇️ Download QR Code</a>
+    </div>
+</body>
+</html>
