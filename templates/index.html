@@ -16,5 +16,15 @@
             <button type="submit">Generate QR Code</button>
         </form>
     </div>
+    <script>
+     document.addEventListener("DOMContentLoaded", function () {
+      const datetimeInput = document.querySelector('input[name="unlock_time"]');
+      const now = new Date();
+      now.setSeconds(0, 0); // Clear seconds and milliseconds
+      const isoTime = now.toISOString().slice(0, 16); // Format: yyyy-mm-ddThh:mm
+      datetimeInput.min = isoTime;
+    });
+   </script>
+
 </body>
 </html>
