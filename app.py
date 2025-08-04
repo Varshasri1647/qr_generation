@@ -55,10 +55,8 @@ def unlock(qr_id):
     if qr_id not in messages:
         return "Invalid QR code.", 404
 
-    unlock_str = messages[qr_id]["unlock_time"]
-    unlock_time = datetime.strptime(unlock_str, "%Y-%m-%d %H:%M:%S")
-    if unlock_time.tzinfo is None:
-        unlock_time = SG_TIMEZONE.localize(unlock_time)
+    unlock_time = datetime.strptime(messages[qr_id]["unlock_time"], "%Y-%m-%d %H:%M:%S")
+    unlock_time = SG_TIMEZONE.localize(unlock_time)
 
     if now >= unlock_time:
         return render_template('unlocked.html', message=messages[qr_id]["text"])
